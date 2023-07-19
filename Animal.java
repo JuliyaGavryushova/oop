@@ -1,4 +1,4 @@
-public class Animal {
+public class Animal implements Illable {
     protected String nameAnimal;
     protected String nameOwner;
     protected String diagnosis;
@@ -29,10 +29,6 @@ public class Animal {
         return TYPE;
     }
 
-    protected void eat(){
-        System.out.println("Питание");
-    }
-
     @Override
     public String toString(){
         return String.format("%s{name = %s, owner = %s}", TYPE, nameAnimal, nameOwner);
@@ -40,5 +36,10 @@ public class Animal {
 
      public String getType(String arg){
         return arg + TYPE;
+    }
+
+    @Override
+    public void ill() {
+        System.out.println(nameAnimal + " болеет");
     }
 }
