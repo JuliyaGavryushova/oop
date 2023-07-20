@@ -34,12 +34,12 @@ public class Main {
         // sharik.toGo();
 
         VetClinica clinica = new VetClinica();
-        clinica.addNewAnimal(new Dog("Рекс", "Марина", "простуда", true))
-                .addNewAnimal(new Cat("Васька", "Светлана", null, false));
-        clinica.addNewAnimal(new Parrot("Кеша", "Василий", null, false));
-        clinica.addNewAnimal(new Fish("Немо", "Сергей", null, false));
-        clinica.addNewAnimal(new Crow("Каркуша", "Александр", "сломано крыло", false));
-        clinica.addNewAnimal(new Turtle("Рафаэль", null, null, false));
+        clinica.addNewAnimal(new Dog("Рекс", "Марина", "простуда", true, 20))
+                .addNewAnimal(new Cat("Васька", "Светлана", null, false, 15));
+        clinica.addNewAnimal(new Parrot("Кеша", "Василий", null, false, 20));
+        clinica.addNewAnimal(new Fish("Немо", "Сергей", null, false, 7));
+        clinica.addNewAnimal(new Crow("Каркуша", "Александр", "сломано крыло", false, 40));
+        clinica.addNewAnimal(new Turtle("Рафаэль", null, null, false, 5));
 
         for (Animal animal : clinica.getAnimals()) {
             animal.ill();
