@@ -1,13 +1,10 @@
 public class Cat extends Animal implements Soundable, Runnable {
-    // private int countPaws;
-
     // public Cat() {
     // this("Max", null, null, false);
     // }
 
     public Cat(String nameAnimal, String nameOwner, String diagnosis, boolean isVaccinated) {
         super(nameAnimal, nameOwner, diagnosis, isVaccinated);
-        // this.countPaws = countPaws;
     }
 
     @Override

@@ -34,8 +34,8 @@ public class Main {
         // sharik.toGo();
 
         VetClinica clinica = new VetClinica();
-        clinica.addNewAnimal(new Cat("Васька", "Петр", "цистит", false))
-                .addNewAnimal(new Dog("Рекс", "Марина", "простуда", true));
+        clinica.addNewAnimal(new Dog("Рекс", "Марина", "простуда", true))
+                .addNewAnimal(new Cat("Васька", "Светлана", null, false));
         clinica.addNewAnimal(new Parrot("Кеша", "Василий", null, false));
         clinica.addNewAnimal(new Fish("Немо", "Сергей", null, false));
         clinica.addNewAnimal(new Crow("Каркуша", "Александр", "сломано крыло", false));
