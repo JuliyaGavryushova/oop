@@ -1,3 +1,5 @@
+
+
 public class Animal implements Illable {
     protected String nameAnimal;
     protected String nameOwner;
