@@ -59,7 +59,7 @@ public class Pharmacy implements Iterable<Component>, Comparable<Pharmacy> {
             return -10;
         else if (o.getPharmacyPower() == this.getPharmacyPower()) {
             for (Component component : o) {
-                for (Component comp : this) {
+                for (Component comp : this.components) {
                     if (component.getName().compareTo(comp.getName()) != 0) {
                         return component.getName().compareTo(comp.getName());
                     }
@@ -79,7 +79,7 @@ public class Pharmacy implements Iterable<Component>, Comparable<Pharmacy> {
         }
         Pharmacy that = (Pharmacy) o;
         for (Component component : that) {
-            for (Component comp : this) {
+            for (Component comp : this.components) {
                 if (comp.getName() == component.getName() && comp.getWeight() == component.getWeight()
                         && comp.getPower() != component.getPower())
                     return true;
