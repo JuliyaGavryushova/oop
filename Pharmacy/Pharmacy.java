@@ -57,7 +57,53 @@ public class Pharmacy implements Iterable<Component>, Comparable<Pharmacy> {
             return 10;
         else if (o.getPharmacyPower() < this.getPharmacyPower())
             return -10;
+        else if (o.getPharmacyPower() == this.getPharmacyPower()) {
+            for (Component component : o) {
+                for (Component comp : this) {
+                    if (component.getName().compareTo(comp.getName()) != 0) {
+                        return component.getName().compareTo(comp.getName());
+                    }
+                }
+            }
+        }
         return 0;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || this.getClass() != o.getClass()) {
+            return false;
+        }
+        Pharmacy that = (Pharmacy) o;
+        for (Component component : that) {
+            for (Component comp : this) {
+                if (comp.getName() == component.getName() && comp.getWeight() == component.getWeight()
+                        && comp.getPower() != component.getPower())
+                    return true;
+            }
+        }
+        return false;
+        // return this.power == that.getPower() && this.name.equals(that.getName())
+        // && this.weight.equals(that.getWeight());
+    }
+
+    @Override
+    public int hashCode() {
+        int prime = 31;
+        int result = 0;
+        for (Component component : components) {
+            result = component.getName() == null ? 0 : component.getName().hashCode();
+            result = prime * result + (component.getWeight() == null ? 0 : component.getWeight().hashCode());
+            result = prime * result + component.getPower();
+        }
+        // int result = name == null ? 0 : name.hashCode();
+        // result = prime * result + (weight == null ? 0 : weight.hashCode());
+        // result = prime * result + power;
+        // return result;
+        return result;
     }
 
     // @Override
